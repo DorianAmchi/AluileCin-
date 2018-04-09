@@ -2,3 +2,8 @@ h1{
     text-align: center;
 }
 
+#bannerFilm{
+    position : relative;
+    margin: auto;
+    left : 0;
+}
