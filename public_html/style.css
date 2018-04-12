@@ -3,7 +3,16 @@ h1{
 }
 
 #bannerFilm{
+    text-align: center;
     position : relative;
     margin: auto;
-    left : 0;
+    padding : auto;
+    width:100%;
+}
+
+.buttonPage{
+    margin-left: 50px;
+    margin-right: 50px;
+    display : flex;
+    justify-content: space-evenly;
 }
