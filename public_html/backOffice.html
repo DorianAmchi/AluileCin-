@@ -1,43 +1,98 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="navbar-brand" href="./index.html">
-                            <img src="./image/oil.png" width="30" height="30" class="d-inline-block align-top" alt=""/>
-                            ALUILECINE
-                        </a>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./image/oil.png" width="30" height="30" class="d-inline-block align-top" alt="" /> ALUILECINE
+                    </a>
                     <li>
-                        <div><h2>Bienvenue Dorian</h2></div>
+                        <div>
+                            <h2>Bienvenue Dorian</h2>
+                        </div>
                     </li>
-                </ul>
+            </ul>
+        </div>
+    </nav>
+    <div class="accordion" id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Ajouter Un Film
+                    </button>
+                </h5>
             </div>
-        </nav>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="titreFilm">Titre</label>
+                                <input id="titreFilm" type="text" class="form-control" placeholder="Nommez votre film.">
+                            </div>
+                            <div class="col">
+                                <label for="realFilm">Réalisateur</label>
+                                <input id="realFilm" type="text" class="form-control" placeholder="Qui est le réal du film ?">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="descriptionFilm">Description</label>
+                            <textarea class="form-control" id="descriptionFilm" rows="3" placeholder="Donnez une description à votre film."></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="categorieFilm">Catégorie</label>
+                                <input id="categorieFilm" type="text" class="form-control" placeholder="Dans quelle catégorie entre votre film ?">
+                            </div>
+                            <div class="col">
+                                <label for="jaquetteFilm">Jaquette</label>
+                                <input id="jaquetteFilm" type="text" class="form-control" placeholder="Donnez une jaquette (url)">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="recupFilm()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Gestion Des Films
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div id="film" class="card-body">
+                </div>
+            </div>
+        </div>
         <div id="film" class="container">
         </div>
         <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="database.js"></script>
         <script src="backOffice.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+
 </html>
